@@ -101,8 +101,8 @@ class PsConfig {
   /// ..............................................................
   ///
   static final Language defaultLanguage =
-      // Language(languageCode: 'zh', countryCode: 'CN', name: 'Traditional Chinese');
-      Language(languageCode: 'en', countryCode: 'US', name: 'English');
+      Language(languageCode: 'zh', countryCode: 'CN', name: 'Traditional Chinese');
+      // Language(languageCode: 'en', countryCode: 'US', name: 'English');
 
   static final List<Language> psSupportedLanguageList = <Language>[
     Language(languageCode: 'en', countryCode: 'US', name: 'English'),
