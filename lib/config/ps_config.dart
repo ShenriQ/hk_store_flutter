@@ -24,13 +24,13 @@ class PsConfig {
   /// Change your backend url
   ///
   static const String ps_app_url =  'http://basedemos.com/appstore/panel/index.php/';
-//'http://10.10.10.229:81/flutter-store-admin/index.php/';
+// 'http://10.10.11.102:81/hk_store_admin/index.php/';
   static const String ps_app_image_url = 'http://basedemos.com/appstore/panel/uploads/';
-  //'http://10.10.10.229:81/flutter-store-admin/uploads/';
+  // 'http://10.10.11.102:81/hk_store_admin/uploads/';
       
 
   static const String ps_app_image_thumbs_url = 'http://basedemos.com/appstore/panel/uploads/thumbnail/';
-  //  'http://10.10.10.229:81/flutter-store-admin/uploads/thumbnail/';
+  //  'http://10.10.11.102:81/hk_store_admin/uploads/thumbnail/';
       
 
   ///
@@ -101,8 +101,8 @@ class PsConfig {
   /// ..............................................................
   ///
   static final Language defaultLanguage =
-      // Language(languageCode: 'zh', countryCode: 'CN', name: 'Traditional Chinese');
-      Language(languageCode: 'en', countryCode: 'US', name: 'English');
+      Language(languageCode: 'zh', countryCode: 'CN', name: 'Traditional Chinese');
+      // Language(languageCode: 'en', countryCode: 'US', name: 'English');
 
   static final List<Language> psSupportedLanguageList = <Language>[
     Language(languageCode: 'en', countryCode: 'US', name: 'English'),

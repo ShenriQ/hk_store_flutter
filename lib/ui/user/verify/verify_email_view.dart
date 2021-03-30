@@ -66,7 +66,7 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
           alignment: Alignment.bottomCenter,
           children: <Widget>[
             Container(
-                color: PsColors.backgroundColor,
+                color: PsColors.white,
                 height: MediaQuery.of(context).size.height,
                 child: SingleChildScrollView(
                   child: Column(
@@ -243,7 +243,7 @@ class _HeaderTextWidget extends StatelessWidget {
       width: double.infinity,
       child: Stack(children: <Widget>[
         Container(
-            color: PsColors.mainColor,
+            color: PsColors.white,
             padding: const EdgeInsets.only(
                 left: PsDimens.space16, right: PsDimens.space16),
             height: PsDimens.space160,

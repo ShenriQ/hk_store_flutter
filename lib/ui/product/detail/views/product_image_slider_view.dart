@@ -32,6 +32,7 @@ class _ProductImageSliderViewState extends State<ProductImageSliderView> {
               options: CarouselOptions(
                   enlargeCenterPage: true,
                   autoPlay: false,
+                  enableInfiniteScroll: false,
                   height: double.infinity,
                   viewportFraction: 0.8,
                   autoPlayInterval: const Duration(seconds: 5),

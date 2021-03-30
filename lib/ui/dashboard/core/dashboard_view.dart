@@ -485,7 +485,7 @@ class _HomeViewState extends State<DashboardView>
                 Utils.getString(context, 'home__verify_email') ||
                 appBarTitle ==
                     Utils.getString(context, 'home_verify_phone'))
-                ? PsColors.mainColor
+                ? PsColors.baseColor
                 : PsColors.baseColor,
             title: appBarTitle == Utils.getString(context, 'app_name')
                 ?

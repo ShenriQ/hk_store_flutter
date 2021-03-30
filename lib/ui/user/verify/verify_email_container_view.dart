@@ -59,7 +59,7 @@ class _CityVerifyEmailContainerViewState extends State<VerifyEmailContainerView>
         onWillPop: _requestPop,
         child: Scaffold(
             appBar: AppBar(
-              backgroundColor: PsColors.mainColor,
+              backgroundColor: PsColors.white,
               brightness: Utils.getBrightnessForAppBar(context),
               iconTheme:
                   Theme.of(context).iconTheme.copyWith(color: PsColors.white),

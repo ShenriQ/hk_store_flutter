@@ -585,13 +585,13 @@ class __HeaderBoxWidgetState extends State<_HeaderBoxWidget> {
                       height: PsDimens.space1,
                       color: PsColors.mainColor,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: PsDimens.space16, bottom: PsDimens.space4),
-                      child: _HeaderRatingWidget(
-                        productDetail: widget.productDetail,
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //       top: PsDimens.space16, bottom: PsDimens.space4),
+                    //   child: _HeaderRatingWidget(
+                    //     productDetail: widget.productDetail,
+                    //   ),
+                    // ),
                   ],
                 )),
             DescriptionTileView(
@@ -600,9 +600,9 @@ class __HeaderBoxWidgetState extends State<_HeaderBoxWidget> {
             const Divider(
               height: PsDimens.space1,
             ),
-            _HeaderButtonWidget(
-              productDetail: widget.productDetail.productDetail.data,
-            ),
+            // _HeaderButtonWidget(
+            //   productDetail: widget.productDetail.productDetail.data,
+            // ),
           ],
         ),
       );
@@ -665,125 +665,125 @@ class __FavouriteWidgetState extends State<_FavouriteWidget> {
                           style: Theme.of(context).textTheme.headline5,
                         )),
                   ),
-                  GestureDetector(
-                      onTap: () async {
-                        if (await Utils.checkInternetConnectivity()) {
-                          Utils.navigateOnUserVerificationView(
-                              provider, context, () async {
-                            if (widget.productDetail.productDetail.data
-                                .isFavourited ==
-                                '0') {
-                              setState(() {
-                                widget.productDetail.productDetail.data
-                                    .isFavourited = '1';
-                              });
-                            } else {
-                              setState(() {
-                                widget.productDetail.productDetail.data
-                                    .isFavourited = '0';
-                              });
-                            }
+                  // GestureDetector(
+                  //     onTap: () async {
+                  //       if (await Utils.checkInternetConnectivity()) {
+                  //         Utils.navigateOnUserVerificationView(
+                  //             provider, context, () async {
+                  //           if (widget.productDetail.productDetail.data
+                  //               .isFavourited ==
+                  //               '0') {
+                  //             setState(() {
+                  //               widget.productDetail.productDetail.data
+                  //                   .isFavourited = '1';
+                  //             });
+                  //           } else {
+                  //             setState(() {
+                  //               widget.productDetail.productDetail.data
+                  //                   .isFavourited = '0';
+                  //             });
+                  //           }
 
-                            final FavouriteParameterHolder
-                            favouriteParameterHolder =
-                            FavouriteParameterHolder(
-                              userId: provider.psValueHolder.loginUserId,
-                              productId: widget.product.id,
-                            );
+                  //           final FavouriteParameterHolder
+                  //           favouriteParameterHolder =
+                  //           FavouriteParameterHolder(
+                  //             userId: provider.psValueHolder.loginUserId,
+                  //             productId: widget.product.id,
+                  //           );
 
-                            final PsResource<Product> _apiStatus =
-                            await provider.postFavourite(
-                                favouriteParameterHolder.toMap());
+                  //           final PsResource<Product> _apiStatus =
+                  //           await provider.postFavourite(
+                  //               favouriteParameterHolder.toMap());
 
-                            if (_apiStatus.data != null) {
-                              if (_apiStatus.status == PsStatus.SUCCESS) {
-                                await widget.productDetail.loadProductForFav(
-                                    widget.product.id,
-                                    provider.psValueHolder.loginUserId);
-                              }
-                              if (widget.productDetail != null &&
-                                  widget.productDetail.productDetail != null &&
-                                  widget.productDetail.productDetail.data !=
-                                      null &&
-                                  widget.productDetail.productDetail.data
-                                      .isFavourited ==
-                                      '0') {
-                                icon = Container(
-                                  padding: const EdgeInsets.only(
-                                      top: PsDimens.space8,
-                                      left: PsDimens.space8,
-                                      right: PsDimens.space8,
-                                      bottom: PsDimens.space6),
-                                  decoration: BoxDecoration(
-                                      border:
-                                      Border.all(color: PsColors.mainColor),
-                                      shape: BoxShape.circle),
-                                  child: Icon(Icons.favorite,
-                                      color: PsColors.mainColor),
-                                );
-                              } else {
-                                icon = Container(
-                                  padding: const EdgeInsets.only(
-                                      top: PsDimens.space8,
-                                      left: PsDimens.space8,
-                                      right: PsDimens.space8,
-                                      bottom: PsDimens.space6),
-                                  decoration: BoxDecoration(
-                                      border:
-                                      Border.all(color: PsColors.mainColor),
-                                      shape: BoxShape.circle),
-                                  child: Icon(Icons.favorite_border,
-                                      color: PsColors.mainColor),
-                                );
-                              }
-                            } else {
-                             //print('There is no comment');
-                            }
-                          });
-                        } else {
-                          showDialog<dynamic>(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return ErrorDialog(
-                                  message: Utils.getString(
-                                      context, 'error_dialog__no_internet'),
-                                );
-                              });
-                        }
-                      },
-                      child: widget.productDetail.productDetail.data
-                          .isFavourited !=
-                          null
-                          ? widget.productDetail.productDetail.data
-                          .isFavourited ==
-                          '0'
-                          ? icon = Container(
-                        padding: const EdgeInsets.only(
-                            top: PsDimens.space8,
-                            left: PsDimens.space8,
-                            right: PsDimens.space8,
-                            bottom: PsDimens.space6),
-                        decoration: BoxDecoration(
-                            border:
-                            Border.all(color: PsColors.mainColor),
-                            shape: BoxShape.circle),
-                        child: Icon(Icons.favorite_border,
-                            color: PsColors.mainColor),
-                      )
-                          : icon = Container(
-                        padding: const EdgeInsets.only(
-                            top: PsDimens.space8,
-                            left: PsDimens.space8,
-                            right: PsDimens.space8,
-                            bottom: PsDimens.space6),
-                        decoration: BoxDecoration(
-                            border:
-                            Border.all(color: PsColors.mainColor),
-                            shape: BoxShape.circle),
-                        child: Icon(Icons.favorite,
-                            color: PsColors.mainColor),
-                      )
-                          : null)
+                  //           if (_apiStatus.data != null) {
+                  //             if (_apiStatus.status == PsStatus.SUCCESS) {
+                  //               await widget.productDetail.loadProductForFav(
+                  //                   widget.product.id,
+                  //                   provider.psValueHolder.loginUserId);
+                  //             }
+                  //             if (widget.productDetail != null &&
+                  //                 widget.productDetail.productDetail != null &&
+                  //                 widget.productDetail.productDetail.data !=
+                  //                     null &&
+                  //                 widget.productDetail.productDetail.data
+                  //                     .isFavourited ==
+                  //                     '0') {
+                  //               icon = Container(
+                  //                 padding: const EdgeInsets.only(
+                  //                     top: PsDimens.space8,
+                  //                     left: PsDimens.space8,
+                  //                     right: PsDimens.space8,
+                  //                     bottom: PsDimens.space6),
+                  //                 decoration: BoxDecoration(
+                  //                     border:
+                  //                     Border.all(color: PsColors.mainColor),
+                  //                     shape: BoxShape.circle),
+                  //                 child: Icon(Icons.favorite,
+                  //                     color: PsColors.mainColor),
+                  //               );
+                  //             } else {
+                  //               icon = Container(
+                  //                 padding: const EdgeInsets.only(
+                  //                     top: PsDimens.space8,
+                  //                     left: PsDimens.space8,
+                  //                     right: PsDimens.space8,
+                  //                     bottom: PsDimens.space6),
+                  //                 decoration: BoxDecoration(
+                  //                     border:
+                  //                     Border.all(color: PsColors.mainColor),
+                  //                     shape: BoxShape.circle),
+                  //                 child: Icon(Icons.favorite_border,
+                  //                     color: PsColors.mainColor),
+                  //               );
+                  //             }
+                  //           } else {
+                  //            //print('There is no comment');
+                  //           }
+                  //         });
+                  //       } else {
+                  //         showDialog<dynamic>(
+                  //             context: context,
+                  //             builder: (BuildContext context) {
+                  //               return ErrorDialog(
+                  //                 message: Utils.getString(
+                  //                     context, 'error_dialog__no_internet'),
+                  //               );
+                  //             });
+                  //       }
+                  //     },
+                  //     child: widget.productDetail.productDetail.data
+                  //         .isFavourited !=
+                  //         null
+                  //         ? widget.productDetail.productDetail.data
+                  //         .isFavourited ==
+                  //         '0'
+                  //         ? icon = Container(
+                  //       padding: const EdgeInsets.only(
+                  //           top: PsDimens.space8,
+                  //           left: PsDimens.space8,
+                  //           right: PsDimens.space8,
+                  //           bottom: PsDimens.space6),
+                  //       decoration: BoxDecoration(
+                  //           border:
+                  //           Border.all(color: PsColors.mainColor),
+                  //           shape: BoxShape.circle),
+                  //       child: Icon(Icons.favorite_border,
+                  //           color: PsColors.mainColor),
+                  //     )
+                  //         : icon = Container(
+                  //       padding: const EdgeInsets.only(
+                  //           top: PsDimens.space8,
+                  //           left: PsDimens.space8,
+                  //           right: PsDimens.space8,
+                  //           bottom: PsDimens.space6),
+                  //       decoration: BoxDecoration(
+                  //           border:
+                  //           Border.all(color: PsColors.mainColor),
+                  //           shape: BoxShape.circle),
+                  //       child: Icon(Icons.favorite,
+                  //           color: PsColors.mainColor),
+                  //     )
+                  //         : null)
                 ]);
           }));
     } else {
@@ -1626,14 +1626,14 @@ class _IconAndTextWidgetState extends State<_IconAndTextWidget> {
 
     final Widget _addIconWidget = IconButton(
         iconSize: PsDimens.space32,
-        icon: Icon(Icons.add_circle, color: PsColors.mainColor),
+        icon: Icon(Icons.add, color: PsColors.mainColor),
         onPressed: () {
           onUpdateItemCount(1);
         });
 
     final Widget _removeIconWidget = IconButton(
         iconSize: PsDimens.space32,
-        icon: Icon(Icons.remove_circle, color: PsColors.grey),
+        icon: Icon(Icons.remove, color: PsColors.mainColor),
         onPressed: () {
           onUpdateItemCount(2);
         });

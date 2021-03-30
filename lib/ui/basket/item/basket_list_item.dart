@@ -119,16 +119,16 @@ class _ImageAndTextWidget extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '${Utils.getString(context, 'basket_list__price')}  ${basket.product.currencySymbol} ${Utils.getPriceFormat(basket.basketPrice)}',
+                            '${Utils.getString(context, 'basket_list__price')}  ${basket.product.currencySymbol} ${Utils.getPriceFormat(basket.basketPrice)}  X  ${basket.qty}',
                             style: Theme.of(context).textTheme.bodyText2,
                           ),
                           const SizedBox(
                             height: PsDimens.space8,
                           ),
-                          Text(
-                            '${Utils.getString(context, 'basket_list__sub_total')} ${basket.product.currencySymbol} ${Utils.getPriceFormat(subTotalPrice.toString())}',
-                            style: Theme.of(context).textTheme.bodyText2,
-                          ),
+                          // Text(
+                          //   '${Utils.getString(context, 'basket_list__sub_total')} ${basket.product.currencySymbol} ${Utils.getPriceFormat(subTotalPrice.toString())}',
+                          //   style: Theme.of(context).textTheme.bodyText2,
+                          // ),
                           _AttributeAndColorWidget(basket: basket),
                           _IconAndTextWidget(
                             basket: basket,
@@ -167,8 +167,8 @@ class _DeleteButtonWidget extends StatelessWidget {
         color: PsColors.mainLightColor,
         alignment: Alignment.centerRight,
         child: Icon(
-          Icons.delete,
-          color: PsColors.grey,
+          Icons.close,
+          color: PsColors.mainColor,
         ),
       ),
     );
@@ -262,14 +262,14 @@ class _IconAndTextWidgetState extends State<_IconAndTextWidget> {
 
     final Widget _addIconWidget = IconButton(
         iconSize: PsDimens.space32,
-        icon: Icon(Icons.add_circle, color: PsColors.mainColor),
+        icon: Icon(Icons.add, color: PsColors.mainColor),
         onPressed: () {
           onUpdateItemCount(1);
         });
 
     final Widget _removeIconWidget = IconButton(
         iconSize: PsDimens.space32,
-        icon: Icon(Icons.remove_circle, color: PsColors.grey),
+        icon: Icon(Icons.remove, color: PsColors.mainColor),
         onPressed: () {
           onUpdateItemCount(2);
         });

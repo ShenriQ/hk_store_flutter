@@ -264,50 +264,50 @@ class ProductVeticalListItem extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: PsDimens.space8,
-                                    top: PsDimens.space8,
-                                    right: PsDimens.space4),
-                                child: SmoothStarRating(
-                                    key: Key(product.ratingDetail.totalRatingValue),
-                                    rating: double.parse(
-                                        product.ratingDetail.totalRatingValue),
-                                    allowHalfRating: false,
-                                    onRated: (double v) {
-                                      onTap();
-                                    },
-                                    starCount: 5,
-                                    size: 20.0,
-                                    color: PsColors.ratingColor,
-                                    borderColor: PsColors.grey.withAlpha(100),
-                                    spacing: 0.0),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    top: PsDimens.space4,
-                                    bottom: PsDimens.space12,
-                                    left: PsDimens.space12,
-                                    right: PsDimens.space12),
-                                child: Row(
-                                  children: <Widget>[
-                                    Text(
-                                        '${product.ratingDetail.totalRatingValue} ${Utils.getString(context, 'feature_slider__rating')}',
-                                        textAlign: TextAlign.start,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .caption),
-                                    Expanded(
-                                      child: Text(
-                                          '( ${product.ratingDetail.totalRatingCount} ${Utils.getString(context, 'feature_slider__reviewer')} )',
-                                          textAlign: TextAlign.start,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .caption),
-                                    )
-                                  ],
-                                ),
-                              ),
+                              // Padding(
+                              //   padding: const EdgeInsets.only(
+                              //       left: PsDimens.space8,
+                              //       top: PsDimens.space8,
+                              //       right: PsDimens.space4),
+                              //   child: SmoothStarRating(
+                              //       key: Key(product.ratingDetail.totalRatingValue),
+                              //       rating: double.parse(
+                              //           product.ratingDetail.totalRatingValue),
+                              //       allowHalfRating: false,
+                              //       onRated: (double v) {
+                              //         onTap();
+                              //       },
+                              //       starCount: 5,
+                              //       size: 20.0,
+                              //       color: PsColors.ratingColor,
+                              //       borderColor: PsColors.grey.withAlpha(100),
+                              //       spacing: 0.0),
+                              // ),
+                              // Padding(
+                              //   padding: const EdgeInsets.only(
+                              //       top: PsDimens.space4,
+                              //       bottom: PsDimens.space12,
+                              //       left: PsDimens.space12,
+                              //       right: PsDimens.space12),
+                              //   child: Row(
+                              //     children: <Widget>[
+                              //       Text(
+                              //           '${product.ratingDetail.totalRatingValue} ${Utils.getString(context, 'feature_slider__rating')}',
+                              //           textAlign: TextAlign.start,
+                              //           style: Theme.of(context)
+                              //               .textTheme
+                              //               .caption),
+                              //       Expanded(
+                              //         child: Text(
+                              //             '( ${product.ratingDetail.totalRatingCount} ${Utils.getString(context, 'feature_slider__reviewer')} )',
+                              //             textAlign: TextAlign.start,
+                              //             style: Theme.of(context)
+                              //                 .textTheme
+                              //                 .caption),
+                              //       )
+                              //     ],
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),

@@ -321,7 +321,7 @@ class __HomeLatestProductHorizontalListWidgetState
                         },
                       ),
                       Container(
-                          height: 3500,
+                          height: 3800,
                           width: MediaQuery.of(context).size.width,
                           child: GridView.builder(
                               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,childAspectRatio: width / (height / 1)),

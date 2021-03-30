@@ -113,14 +113,14 @@ class __ShopInfoViewWidgetState extends State<_ShopInfoViewWidget> {
                         child: Text(
                             Utils.getString(context, 'shop_info__contact'),
                             style: Theme.of(context).textTheme.subtitle1)),
-                    _PhoneAndContactWidget(
-                      phone: widget.provider.shopInfo.data,
-                    ),
-                    _LinkAndTitle(
-                        icon: FontAwesome.wordpress,
-                        title: Utils.getString(
-                            context, 'shop_info__visit_our_website'),
-                        link: widget.provider.shopInfo.data.aboutWebsite),
+                    // _PhoneAndContactWidget(
+                    //   phone: widget.provider.shopInfo.data,
+                    // ),
+                    // _LinkAndTitle(
+                    //     icon: FontAwesome.wordpress,
+                    //     title: Utils.getString(
+                    //         context, 'shop_info__visit_our_website'),
+                    //     link: widget.provider.shopInfo.data.aboutWebsite),
                     _LinkAndTitle(
                         icon: FontAwesome.facebook,
                         title: Utils.getString(context, 'shop_info__facebook'),
@@ -353,8 +353,8 @@ class ImageAndTextWidget extends StatelessWidget {
     final Widget _imageWidget = PsNetworkImage(
       photoKey: '',
       defaultPhoto: data.defaultPhoto,
-      width: 50,
-      height: 50,
+      width: 80,
+      height: 80,
       boxfit: BoxFit.cover,
       onTap: () {},
     );
@@ -364,14 +364,13 @@ class ImageAndTextWidget extends StatelessWidget {
             left: PsDimens.space16,
             right: PsDimens.space16,
             top: PsDimens.space16),
-        child: Row(
+        child: Column(
           children: <Widget>[
             _imageWidget,
             const SizedBox(
               width: PsDimens.space12,
             ),
-            Expanded(
-              child: Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
@@ -420,7 +419,6 @@ class ImageAndTextWidget extends StatelessWidget {
                   ),
                 ],
               ),
-            )
           ],
         ));
   }
