@@ -104,22 +104,31 @@ class _ItemWidget extends StatelessWidget {
               ),
             ),
             _dividerWidget,
+            if (transaction.productColorCode != null &&
+                    transaction.productColorCode != '')
+            _TransactionNoTextWidget(
+              transationInfoText:
+                  transaction.productColorCode,
+              title:
+                  '${Utils.getString(context, 'Color')} :',
+            ),
             Row(
               children: <Widget>[
-                if (transaction.productColorCode != null &&
-                    transaction.productColorCode != '')
-                  Container(
-                    margin: const EdgeInsets.all(PsDimens.space10),
-                    width: PsDimens.space32,
-                    height: PsDimens.space32,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: hexToColor(transaction.productColorCode),
-                      border: Border.all(width: 1, color: PsColors.grey),
-                    ),
-                  )
-                else
-                  Container(),
+                // if (transaction.productColorCode != null &&
+                //     transaction.productColorCode != '')
+                //   Container(
+                //     margin: const EdgeInsets.all(PsDimens.space10),
+                //     child: Text(transaction.productColorCode),
+                //     // width: PsDimens.space32,
+                //     // height: PsDimens.space32,
+                //     // decoration: BoxDecoration(
+                //     //   borderRadius: BorderRadius.circular(20),
+                //     //   color: hexToColor(transaction.productColorCode),
+                //     //   border: Border.all(width: 1, color: PsColors.grey),
+                //     // ),
+                //   )
+                // else
+                //   Container(),
                 if (attributeName != null && attributeName != '')
                   Flexible(
                     child: Text(

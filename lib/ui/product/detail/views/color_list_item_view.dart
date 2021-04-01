@@ -24,15 +24,20 @@ class ColorListItemView extends StatelessWidget {
     return GestureDetector(
         onTap: onColorTap,
         child: Container(
-          margin: const EdgeInsets.symmetric(
-              horizontal: PsDimens.space2, vertical: PsDimens.space2),
-          child: _CheckIsSelectedWidget(
-            color: color.colorValue != ''
-                ? hexToColor(color.colorValue)
-                : PsColors.grey,
-            isSelected: color.id == selectedColorId,
-          ),
-        ));
+            margin: const EdgeInsets.symmetric(
+                horizontal: PsDimens.space2, vertical: PsDimens.space2),
+            child: Row(
+              children: <Widget>[
+                Checkbox(value: color.id == selectedColorId, onChanged: null),
+                Text(color.colorValue),
+                // _CheckIsSelectedWidget(
+                //   color: color.colorValue != ''
+                //       ? hexToColor(color.colorValue)
+                //       : PsColors.grey,
+                //   isSelected: color.id == selectedColorId,
+                // ),
+              ],
+            )));
   }
 }
 

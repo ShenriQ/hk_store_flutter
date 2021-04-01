@@ -327,36 +327,38 @@ class _AttributeAndColorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        if (basket.basketSelectedAttributeList.isNotEmpty &&
-            basket.selectedColorValue != null)
+        if (basket.selectedColorValue != null)
           Text(
-            '${Utils.getString(context, 'basket_list__attributes')}',
+            '${Utils.getString(context, 'Color')}',
             style: Theme.of(context).textTheme.bodyText2,
           )
         else
           Container(),
         if (basket.selectedColorValue != null)
-          Container(
+        Container(
             margin: const EdgeInsets.all(PsDimens.space10),
-            width: PsDimens.space20,
-            height: PsDimens.space20,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: hexToColor(basket.selectedColorValue),
-              border: Border.all(width: 1, color: PsColors.grey),
-            ),
-          )
-        else
-          Container(),
+            // width: PsDimens.space20,
+            // height: PsDimens.space20,
+            child: Text(basket.selectedColorValue),
+            // decoration: BoxDecoration(
+            //   borderRadius: BorderRadius.circular(20),
+            //   color: hexToColor(basket.selectedColorValue),
+            //   border: Border.all(width: 1, color: PsColors.grey),
+            // ),
+        ),
+        if (basket.basketSelectedAttributeList.isNotEmpty) 
+        Text(
+          '${Utils.getString(context, 'basket_list__attributes')}',
+          style: Theme.of(context).textTheme.bodyText2,
+        ),
+        Container(),
         if (basket.basketSelectedAttributeList.isNotEmpty)
           Flexible(
             child: Text(
               '( ${getSelectedAttribute().toString()} )',
               style: Theme.of(context).textTheme.bodyText2,
             ),
-          )
-        else
-          Container(),
+          ),
       ],
     );
   }
